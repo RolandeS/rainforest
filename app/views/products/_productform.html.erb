@@ -4,5 +4,19 @@ Name: <%= f.text_field :name %><br><br>
 Description: <%= f.text_area :description %><br><br>
 Price: <%= f.number_field :price_in_cents %><br><br>
 
+<% if @product.errors.any? %>
+	<div id="error_explanation">
+		<h3><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
+
+		<ul>
+			<% @product.errors.full_messages.each do |msg| %>
+				<% unless msg == "Price in cents is not a number"%>
+				<li><%= msg %></li>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
 <%= f.submit %>
 <% end %>
