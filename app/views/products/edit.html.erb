@@ -1,0 +1,7 @@
+<h1>Products#edit</h1>
+<p>Find me in app/views/products/edit.html.erb</p>
+<%= link_to "Back to all products", products_path %>
+
+<%= render 'productform' %> | <%= link_to "Delete", @product, method: :delete, data: {confirm: "Are you sure?"} %>
+
+

@@ -1,0 +1,28 @@
+<h1>Products#show</h1>
+<p>Find me in app/views/products/show.html.erb</p>
+
+<%= link_to "Back to all Products", products_path %>
+
+<ul>
+	<li>
+		Product ID: <%= @product.id %>,
+	</li>
+	<li>
+		Product name: <%= @product.name %>,
+	</li>
+	<li>
+		Product description: <%= @product.description %>,
+	</li>
+	<li>
+		Product price: <%= @product.price_in_cents %>,
+	</li>
+	<li>
+		Created at: <%= @product.created_at %>,
+	</li>
+	<li>
+		Updated at: <%= @product.updated_at %>,
+	</li>
+</ul>
+
+<%= link_to "Edit this Product", edit_product_path %> | 
+<%= link_to "Delete this Product", @product, data: {confirm: "Are you sure you want to delete this product?"}, :method => :delete %>

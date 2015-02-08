@@ -1,0 +1,30 @@
+<h1>Products#index</h1>
+<p>Find me in app/views/products/index.html.erb</p>
+
+
+<% @products.each do |product| %>
+<ul>
+	<li>
+		Product ID: <%= product.id %>,
+	</li>
+	<li>
+		Product name: <%= product.name %>,
+	</li>
+	<li>
+		Product description: <%= product.description %>,
+	</li>
+	<li>
+		Product price: <%= product.price_in_cents %>,
+	</li>
+	<li>
+		Created at: <%= product.created_at %>,
+	</li>
+	<li>
+		Updated at: <%= product.updated_at %>,
+	</li>
+
+	<li>
+		<button><%= link_to "Check it out!", "/products/#{product.id}" %></button>
+	</li>
+</ul>
+<% end %>
