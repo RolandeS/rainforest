@@ -2,7 +2,7 @@
 <%= form_for @product do |f| %>
 Name: <%= f.text_field :name %><br><br>
 Description: <%= f.text_area :description %><br><br>
-Price: <%= f.number_field :price_in_cents %><br><br>
+Price in cents: <%= f.number_field :price_in_cents %><br><br>
 
 <% if @product.errors.any? %>
 	<div id="error_explanation">
