@@ -1,0 +1,24 @@
+<ul>
+	<!-- <li>
+		Product ID: <%= product.id %>,
+	</li> -->
+	<li>
+		Product name: <%= product.name %>,
+	</li>
+	<li>
+		Product description: <%= truncate(product.description, length: 100) %>,
+	</li>
+	<li>
+		Product price ($): <%= product.formatted_price %>,
+	</li>
+	<!-- <li>
+		Created at: <%= product.created_at %>,
+	</li>
+	<li>
+		Updated at: <%= product.updated_at %>,
+	</li> -->
+
+	<li>
+		<button><%= link_to "Check it out!", "/products/#{product.id}" %></button>
+	</li>
+</ul

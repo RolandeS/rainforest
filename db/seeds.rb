@@ -6,20 +6,28 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Product.create!(
-    :name => "Blaaaa",
-    :description => "Blaaaa",
-    :price_in_cents => "9957"
-	)
+# Product.create!(
+#     :name => "Blaaaa",
+#     :description => "Blaaaa",
+#     :price_in_cents => "9957"
+# 	)
 
-Product.create!(
-    :name => "Blaaaa2",
-    :description => "Blaaaa2",
-    :price_in_cents => "09586"
-	)
+# Product.create!(
+#     :name => "Blaaaa2",
+#     :description => "Blaaaa2",
+#     :price_in_cents => "09586"
+# 	)
 
-Product.create!(
-    :name => "Blaaaa3",
-    :description => "Blaaaa3",
-    :price_in_cents => "098567"
-	)
+# Product.create!(
+#     :name => "Blaaaa3",
+#     :description => "Blaaaa3",
+#     :price_in_cents => "098567"
+# 	)
+
+100.times do
+  Product.create(
+    name: Faker::Company.catch_phrase,
+    description: "#{Faker::Company.bs} from #{Faker::Company.name} #{Faker::Company.suffix}",
+    price_in_cents: rand(100000)
+  )
+end

@@ -1,33 +1,18 @@
-<h1>Products#index</h1>
+<h1>Products </h1><p><%= page_entries_info @products %></p>
 <p>Find me in app/views/products/index.html.erb</p>
 
-<button><%= link_to "Add New", new_product_path %></button>
-
-<% @products.each do |product| %>
-<ul>
-	<li>
-		Product ID: <%= product.id %>,
-	</li>
-	<li>
-		Product name: <%= product.name %>,
-	</li>
-	<li>
-		Product description: <%= product.description %>,
-	</li>
-	<li>
-		Product price ($): <%= product.formatted_price %>,
-	</li>
-	<li>
-		Created at: <%= product.created_at %>,
-	</li>
-	<li>
-		Updated at: <%= product.updated_at %>,
-	</li>
-
-	<li>
-		<button><%= link_to "Check it out!", "/products/#{product.id}" %></button>
-	</li>
-</ul>
+<%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
+<%= text_field_tag :search, params[:search] %>
+<%= submit_tag "Search" %>
 <% end %>
 
+
 <button><%= link_to "Add New", new_product_path %></button>
+
+<div id="products">
+  <%= render @products %>
+</div>
+
+<button><%= link_to "Add New", new_product_path %></button>
+
+<%= paginate @products %>
