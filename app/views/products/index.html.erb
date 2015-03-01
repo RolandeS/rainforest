@@ -1,6 +1,8 @@
 <h1>Products </h1><p><%= page_entries_info @products %></p>
 <p>Find me in app/views/products/index.html.erb</p>
 
+<!--<div style="background-color: cornflowerblue; color: yellow; font-size: 18pt" id="noodle">Click to Win!</div>-->
+
 <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
 <%= text_field_tag :search, params[:search] %>
 <%= submit_tag "Search" %>
